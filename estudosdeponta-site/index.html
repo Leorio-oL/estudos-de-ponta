@@ -1,0 +1,391 @@
+<!doctype html>
+<!-- Republicação da versão mais recente após reversão acidental. -->
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#081a29" />
+  <meta name="description"
+    content="Material de preparação para o concurso do INSS com apostilas, bônus e 7 dias de garantia." />
+  <title>Estudos de Ponta | Kit INSS</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preload" href="assets/logo-full.png" as="image" />
+  <link rel="preload" href="assets/HeroS.webp" as="image" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2256464811597467');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2256464811597467&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body class="quiz-active">
+  <noscript>
+    <div class="noscript">Este site precisa de JavaScript ativado para exibir o quiz e as ofertas.</div>
+  </noscript>
+
+  <main id="quizGate" class="quiz-gate" aria-label="Quiz de preparação para o INSS">
+    <div class="quiz-bg quiz-bg-a"></div>
+    <div class="quiz-bg quiz-bg-b"></div>
+
+    <section class="quiz-shell">
+      <img class="quiz-logo" src="assets/logo-full.png" alt="Estudos de Ponta" width="1440" height="485" />
+
+      <div class="quiz-progress" aria-hidden="true"><span id="quizProgress"></span></div>
+
+      <div id="quizStart" class="quiz-screen active">
+        <span class="eyebrow">Quiz rápido</span>
+        <h1>Você está preparado para aproveitar uma oportunidade que pode mudar sua vida?</h1>
+        <p>Responda 5 perguntas rápidas e descubra qual kit faz mais sentido para o seu momento.</p>
+        <button class="btn btn-primary btn-xl" data-action="start-quiz">Começar o teste <span>→</span></button>
+        <div class="quiz-trust">Leva menos de 1 minuto • Sem cadastro para responder</div>
+      </div>
+
+      <div id="quizQuestion" class="quiz-screen" aria-live="polite">
+        <div class="question-topline">
+          <span id="questionCount">PERGUNTA 1 DE 5</span>
+          <span id="questionMini">20%</span>
+        </div>
+        <h2 id="questionTitle"></h2>
+        <div id="questionOptions" class="question-options"></div>
+        <button id="quizBack" class="text-button" type="button">← Voltar</button>
+      </div>
+
+      <div id="quizResult" class="quiz-screen">
+        <div class="result-check">✓</div>
+        <span class="eyebrow eyebrow-green">Resultado pronto</span>
+        <h2>O mais importante agora é começar com mais clareza.</h2>
+        <p id="quizResultText">Pelas suas respostas, uma preparação objetiva e organizada pode ajudar você a sair do
+          lugar sem gastar uma fortuna.</p>
+        <button class="btn btn-primary btn-xl" data-action="enter-site">Ver minha preparação <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <div id="site" class="site" hidden>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="site-logo" aria-label="Estudos de Ponta">
+          <img src="assets/logo-full.png" alt="Estudos de Ponta" width="1440" height="485" />
+        </a>
+        <nav class="header-nav">
+          <a href="#historia">Minha história</a>
+          <a href="#ofertas">Ofertas</a>
+          <a href="#garantia">Garantia</a>
+          <a href="#ofertas" class="header-cta">Ver kits</a>
+        </nav>
+      </div>
+    </header>
+
+    <div id="promoBar" class="promo-bar" hidden>
+      <div class="container promo-bar-inner">
+        <span class="promo-label">Oferta especial</span>
+        <p>Kit Completo por <strong>R$24,90</strong> • termina em <time class="countdown" data-countdown>09:00</time>
+        </p>
+        <button type="button" class="promo-buy" data-checkout="flash">Aproveitar</button>
+      </div>
+    </div>
+
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+
+          <h1>10 mil vagas solicitadas para o INSS. <span>Seu preparo pode começar hoje.</span></h1>
+          <p>Se você cansou de conteúdo solto, cursinho caro e falta de direção, aqui está um caminho mais simples para
+            dar o primeiro passo.</p>
+          <div id="personalizedLine" class="personalized-line" hidden></div>
+
+          <div class="hero-points">
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3l7 4v5c0 4.4-3 8.4-7 9-4-0.6-7-4.6-7-9V7l7-4zm-1 12l6-6-1.4-1.4L11 12.2 8.4 9.6 7 11l4 4z" />
+              </svg>
+              <span>Conteúdo direto ao ponto</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2v2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v8h14v-8z" />
+              </svg>
+              <span>Estude no seu ritmo</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 13h4l3 6 4-14 3 8h4" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Acesso imediato</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#ofertas" class="btn btn-primary btn-xl">Quero começar minha preparação <span>→</span></a>
+
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-card">
+            <img src="assets/HeroS.webp" alt="Homem apontando para a apostila INSS Estudos de Ponta" width="760"
+              height="980" />
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia" class="story section-light">
+      <div class="container story-grid">
+        <div class="story-media">
+          <img src="assets/story.webp" alt="Apostilas INSS Partes 1 a 4 e bônus Estudos de Ponta" width="1080"
+            height="1080" loading="lazy" decoding="async" />
+        </div>
+        <div class="story-copy">
+
+          <h2>Eu também já me senti perdido estudando para concurso.</h2>
+          <p>Já gastei dinheiro com materiais e cursinhos sem sentir que estava realmente avançando. Foi quando comecei
+            a organizar uma estrutura própria de estudos: mais simples, mais objetiva e mais fácil de seguir.</p>
+          <p>Essa estrutura fez parte da preparação que me ajudou a conquistar <strong>5 aprovações no mesmo
+              ano</strong>. Depois, adaptei tudo para quem quer se preparar para o INSS sem complicação.</p>
+          <a href="#ofertas" class="btn btn-secondary">Conhecer os materiais <span>↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ofertas" class="offers section-dark">
+      <div class="container">
+        <div class="section-heading centered">
+
+          <h2>Do básico ao completo, sem enrolação.</h2>
+          <p>Você pode começar só com as apostilas principais ou levar o kit completo com materiais de apoio, revisão e
+            organização.</p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card basic-card">
+            <div class="offer-card-top">
+              <span class="offer-tag">Kit Basic</span>
+              <h3>Comece gastando o mínimo.</h3>
+              <p>As 4 apostilas principais para estudar com mais clareza.</p>
+            </div>
+
+            <ul class="offer-list price-list">
+              <li><span>Língua Portuguesa, Raciocínio Lógico e Informática</span><del>R$69,90</del></li>
+              <li><span>Ética no Serviço Público + Legislação Específica</span><del>R$69,90</del></li>
+              <li><span>Direito Constitucional + Direito Administrativo</span><del>R$69,90</del></li>
+              <li><span>Seguridade Social + Direito Previdenciário</span><del>R$69,90</del></li>
+            </ul>
+
+            <div class="reference-price">
+              <span>Valor somado dos materiais</span>
+              <del>R$279,60</del>
+            </div>
+
+            <div class="price-box">
+              <span class="price-label">Hoje por apenas</span>
+              <div class="price-value"><span class="currency">R$</span><span class="major">19</span><span
+                  class="minor">,90</span></div>
+              <em>pagamento único</em>
+            </div>
+
+            <button id="basicOfferButton" class="btn btn-primary btn-block" type="button">Quero o Kit Basic
+              <span>→</span></button>
+            <div class="card-guarantee">7 dias de garantia</div>
+          </article>
+
+          <article class="offer-card pro-card">
+            <div class="popular-ribbon">Mais vantajoso</div>
+            <div class="offer-card-top">
+              <span class="offer-tag offer-tag-green">Kit Pro</span>
+              <h3>Leve a preparação completa.</h3>
+              <p>As 4 apostilas + 5 materiais extras para organizar, revisar e praticar.</p>
+            </div>
+
+            <ul class="offer-list check-list">
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>4 apostilas principais</span></li>
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>Mapas Mentais</span></li>
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>Planner de Estudos</span></li>
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>Revisão de Véspera</span></li>
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>Simulado Final</span></li>
+              <li><svg viewBox="0 0 24 24">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg><span>Checklist da Reta Final</span></li>
+            </ul>
+
+            <div class="nine-materials">9 materiais no total</div>
+
+            <div class="price-box pro-price">
+              <span class="price-label">Tudo por</span>
+              <div class="price-value"><span class="currency">R$</span><span class="major">32</span><span
+                  class="minor">,90</span></div>
+              <em>pagamento único</em>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="button" data-checkout="pro">Quero o Kit Pro
+              <span>→</span></button>
+            <div class="card-guarantee">Acesso imediato • 7 dias de garantia</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="direction section-light">
+      <div class="container direction-grid">
+        <div>
+
+          <h2>Você não precisa de mais PDFs soltos. Precisa de direção.</h2>
+          <p class="section-lead">Cada item do kit foi pensado para ajudar você a estudar com mais clareza e constância.
+          </p>
+          <div class="direction-cards">
+            <div>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                </svg></span>
+              <div><strong>Saiba o que estudar</strong><span>As apostilas organizam o conteúdo principal em blocos
+                  objetivos.</span></div>
+            </div>
+            <div>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M7 2v2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v8h14v-8z" />
+                </svg></span>
+              <div><strong>Organize sua rotina</strong><span>O planner transforma intenção em plano de estudo.</span>
+              </div>
+            </div>
+            <div>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24">
+                  <path d="M4 5h16v2H4zm0 6h10v2H4zm0 6h16v2H4z" />
+                </svg></span>
+              <div><strong>Revise com mais facilidade</strong><span>Mapas mentais e revisão de véspera ajudam na
+                  fixação.</span></div>
+            </div>
+            <div>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24">
+                  <path d="M9 11l3 3L22 4M2 12l5 5m0-5l3 3" />
+                </svg></span>
+              <div><strong>Teste o que aprendeu</strong><span>Simulado e checklist apoiam a reta final da
+                  preparação.</span></div>
+            </div>
+          </div>
+          <a href="#ofertas" class="btn btn-dark">Quero começar hoje <span>→</span></a>
+        </div>
+        <aside class="direction-quote">
+          <p>“O mais difícil não é estudar. É sair da estaca zero com confiança.”</p>
+          <strong>Comece de forma simples, mas comece.</strong>
+        </aside>
+      </div>
+    </section>
+
+    <section id="garantia" class="guarantee section-green">
+      <div class="container guarantee-grid">
+        <div class="guarantee-seal-image" aria-hidden="true">
+          <img src="assets/guarantee-seal.webp" alt="" width="700" height="700" loading="lazy" decoding="async" />
+        </div>
+        <div>
+
+          <h2>Você tem 7 dias para decidir.</h2>
+          <p>Receba o material, veja como tudo está organizado e avalie se faz sentido para a sua preparação. Se estiver
+            dentro das condições da garantia e decidir não continuar, você poderá solicitar o reembolso dentro do
+            período informado na compra.</p>
+
+          <a href="#ofertas" class="btn btn-black">Quero começar com garantia <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section-dark">
+      <div class="closing-bg"><img src="assets/closing.webp" alt="Pessoa estudando à noite" width="760" height="1100"
+          loading="lazy" decoding="async" /></div>
+      <div class="container closing-inner">
+
+        <h2>Daqui a alguns meses, você pode olhar para trás e pensar: “ainda bem que eu comecei”.</h2>
+        <p>Você não controla quando o edital sai, quantas pessoas vão disputar uma vaga ou como a prova será. Mas pode
+          decidir hoje quando a sua preparação começa.</p>
+        <div class="closing-actions">
+          <a href="#ofertas" class="btn btn-primary btn-xl">Quero mudar de vida <span>→</span></a>
+          <small>Sua preparação pode começar hoje.</small>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo-full.png" alt="Estudos de Ponta" width="1440" height="485" />
+          <span>Material independente de preparação.</span>
+        </div>
+        <p>Este produto não possui vínculo oficial com o INSS. A referência a 10 mil vagas diz respeito a vagas
+          solicitadas e não representa garantia de autorização, publicação de edital ou aprovação. O material
+          educacional não garante resultado em concurso.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div id="basicModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="basicModalTitle" hidden>
+    <div class="modal-backdrop" data-close="basic"></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close="basic" aria-label="Fechar">×</button>
+      <span class="modal-kicker">Últimos 9 minutos</span>
+      <h2 id="basicModalTitle">Antes de concluir: leve tudo por apenas R$24,90</h2>
+      <p>Você estava prestes a levar só as 4 apostilas. Se aproveitar agora, leva o kit completo com os 5 extras por
+        apenas <strong>+R$5</strong>.</p>
+      <div class="upgrade-equation">
+        <span>4 apostilas</span><b>+</b><span>5 extras</span>
+      </div>
+      <div class="modal-price"><del>R$32,90</del><strong>R$24,90</strong></div>
+      <div class="modal-timer">Esta condição termina em <time class="countdown" data-countdown>09:00</time></div>
+      <div class="modal-actions compact-actions">
+        <button class="btn btn-primary" type="button" data-checkout="flash">Levar tudo por R$24,90</button>
+        <button class="btn-link" type="button" data-checkout="basic">Ficar só com o Basic</button>
+      </div>
+      <small>Pagamento único • Acesso imediato • 7 dias de garantia</small>
+    </div>
+  </div>
+
+  <div id="exitModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle" hidden>
+    <div class="modal-backdrop" data-close="exit"></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close="exit" aria-label="Fechar">×</button>
+      <span class="modal-kicker">Antes de ir...</span>
+      <h2 id="exitModalTitle">Leve todo o material por R$24,90</h2>
+      <p>Uma última condição para você começar hoje com as 4 apostilas + 5 materiais extras.</p>
+      <div class="modal-price"><del>R$32,90</del><strong>R$24,90</strong></div>
+      <div class="modal-timer">Últimos <time class="countdown" data-countdown>09:00</time></div>
+      <button class="btn btn-primary btn-block" type="button" data-checkout="flash">Aproveitar agora</button>
+      <button class="exit-decline" type="button" data-close="exit">Realizar meu sonho não é o meu foco no
+        momento</button>
+      <small>7 dias de garantia • Acesso imediato</small>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

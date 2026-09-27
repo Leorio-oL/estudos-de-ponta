@@ -1,0 +1,18 @@
+# Site static: no build, publish from repo root.
+[build]
+  publish = "."
+
+# Cabeçalhos de segurança globais (2 regras presentes no deploy publicado).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Imagens com cache longo (deploy serve immutable para /assets/*).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
