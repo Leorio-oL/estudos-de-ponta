@@ -3,15 +3,25 @@
 <html lang="pt-BR">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KZ6WWQ6W');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#081a29" />
   <meta name="description"
-    content="Material de preparação para o concurso do INSS com apostilas, bônus e 7 dias de garantia." /> 
+    content="Material de preparação para o concurso do INSS com apostilas, bônus e 7 dias de garantia." />
   <title>Estudos de Ponta | Kit INSS</title>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preload" href="assets/logo-full.png" as="image" />
-  <link rel="preload" href="assets/HeroS.webp" as="image" type="image/webp" />
+  <link rel="preload" href="assets/heros.webp" as="image" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Meta Pixel Code -->
   <script>
@@ -35,6 +45,10 @@
 </head>
 
 <body class="quiz-active">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ6WWQ6W"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <noscript>
     <div class="noscript">Este site precisa de JavaScript ativado para exibir o quiz e as ofertas.</div>
   </noscript>
@@ -49,16 +63,16 @@
       <div class="quiz-progress" aria-hidden="true"><span id="quizProgress"></span></div>
 
       <div id="quizStart" class="quiz-screen active">
-        <span class="eyebrow">Quiz rápido</span>
-        <h1>Você está preparado para aproveitar uma oportunidade que pode mudar sua vida?</h1>
-        <p>Responda 5 perguntas rápidas e descubra qual kit faz mais sentido para o seu momento.</p>
-        <button class="btn btn-primary btn-xl" data-action="start-quiz">Começar o teste <span>→</span></button>
-        <div class="quiz-trust">Leva menos de 1 minuto • Sem cadastro para responder</div>
+        <span class="eyebrow">Diagnóstico de estudos</span>
+        <h1>Descubra como está sua preparação para o concurso do INSS.</h1>
+        <p>Responda essas perguntas rápidas e receba um diagnóstico sobre seus estudos.</p>
+        <button class="btn btn-primary btn-xl" data-action="start-quiz">Começar diagnóstico <span>→</span></button>
+        <div class="quiz-trust">Rápido • Sem cadastro para responder</div>
       </div>
 
       <div id="quizQuestion" class="quiz-screen" aria-live="polite">
         <div class="question-topline">
-          <span id="questionCount">PERGUNTA 1 DE 5</span>
+          <span id="questionCount">ETAPA 1 DE 5</span>
           <span id="questionMini">20%</span>
         </div>
         <h2 id="questionTitle"></h2>
@@ -66,13 +80,39 @@
         <button id="quizBack" class="text-button" type="button">← Voltar</button>
       </div>
 
-      <div id="quizResult" class="quiz-screen">
+      <div id="quizResult" class="quiz-screen quiz-result-screen">
         <div class="result-check">✓</div>
-        <span class="eyebrow eyebrow-green">Resultado pronto</span>
-        <h2>O mais importante agora é começar com mais clareza.</h2>
-        <p id="quizResultText">Pelas suas respostas, uma preparação objetiva e organizada pode ajudar você a sair do
-          lugar sem gastar uma fortuna.</p>
-        <button class="btn btn-primary btn-xl" data-action="enter-site">Ver minha preparação <span>→</span></button>
+        <span class="eyebrow eyebrow-green">Seu diagnóstico</span>
+        <p id="quizResultText" class="diagnosis-result-text"><strong>Você precisa de uma preparação simples, organizada e que seja fácil de seguir.</strong></p>
+
+        <div class="diagnosis-summary" aria-label="Resumo do diagnóstico">
+          <div class="diagnosis-step"><span>01</span><p>Evite conteúdos espalhados.</p></div>
+          <span class="diagnosis-arrow" aria-hidden="true">→</span>
+          <div class="diagnosis-step"><span>02</span><p>Tenha uma estrutura clara.</p></div>
+          <span class="diagnosis-arrow" aria-hidden="true">→</span>
+          <div class="diagnosis-step"><span>03</span><p>Comece sem esperar a rotina perfeita.</p></div>
+        </div>
+
+        <div class="diagnosis-offer-grid">
+          <article class="diagnosis-card">
+            <span class="diagnosis-kit-label">Kit Basic</span>
+            <h3>4 Apostilas Completas | INSS</h3>
+            <p>Para começar com o conteúdo essencial.</p>
+            <div class="diagnosis-price"><small>R$</small><strong>19</strong><span>,90</span></div>
+            <button class="btn btn-primary btn-block" type="button" data-checkout="basic">Comprar Kit Basic <span>→</span></button>
+          </article>
+
+          <article class="diagnosis-card diagnosis-card-pro">
+            <span class="diagnosis-recommended">RECOMENDADO</span>
+            <span class="diagnosis-kit-label">Kit Pro</span>
+            <h3>4 Apostilas + 5 materiais essênciais de apoio</h3>
+            <p>Para estudar, organizar, revisar e praticar.</p>
+            <div class="diagnosis-price"><small>R$</small><strong>32</strong><span>,90</span></div>
+            <button class="btn btn-primary btn-block" type="button" data-checkout="pro">Comprar Kit Pro <span>→</span></button>
+          </article>
+        </div>
+
+        <button class="btn diagnosis-more" data-action="enter-site">Saber mais sobre o material <span>→</span></button>
       </div>
     </section>
   </main>
@@ -142,7 +182,7 @@
 
         <div class="hero-visual">
           <div class="hero-photo-card">
-            <img src="assets/HeroS.webp" alt="Homem apontando para a apostila INSS Estudos de Ponta" width="760"
+            <img src="assets/heros.webp" alt="Homem apontando para a apostila INSS Estudos de Ponta" width="760"
               height="980" />
 
           </div>
@@ -153,7 +193,7 @@
     <section id="historia" class="story section-light">
       <div class="container story-grid">
         <div class="story-media">
-          <img src="assets/livros.webp" alt="Apostilas INSS Partes 1 a 4 e bônus Estudos de Ponta" width="1080"
+          <img src="assets/mockup.webp" alt="Apostilas INSS Partes 1 a 4 e bônus Estudos de Ponta" width="1080"
             height="1080" loading="lazy" decoding="async" />
         </div>
         <div class="story-copy">
@@ -187,14 +227,14 @@
 
             <ul class="offer-list price-list">
               <li><span>Língua Portuguesa, Raciocínio Lógico e Informática</span><del>R$69,90</del></li>
-              <li><span>Ética no Serviço Público + Legislação Específica</span><del>R$69,90</del></li>
-              <li><span>Direito Constitucional + Direito Administrativo</span><del>R$69,90</del></li>
-              <li><span>Seguridade Social + Direito Previdenciário</span><del>R$69,90</del></li>
+              <li><span>Ética no Serviço Público + Legislação Específica</span><del>R$59,90</del></li>
+              <li><span>Direito Constitucional + Direito Administrativo</span><del>R$80,00</del></li>
+              <li><span>Seguridade Social + Direito Previdenciário</span><del>R$59,90</del></li>
             </ul>
 
             <div class="reference-price">
               <span>Valor somado dos materiais</span>
-              <del>R$279,60</del>
+              <del>R$269,70</del>
             </div>
 
             <div class="price-box">
@@ -210,11 +250,11 @@
           </article>
 
           <article class="offer-card pro-card">
-            <div class="popular-ribbon">Mais vantajoso</div>
+            <div class="popular-ribbon">RECOMENDADO</div>
             <div class="offer-card-top">
               <span class="offer-tag offer-tag-green">Kit Pro</span>
               <h3>Leve a preparação completa.</h3>
-              <p>As 4 apostilas + 5 materiais extras para organizar, revisar e praticar.</p>
+              <p>As 4 apostilas + 5 materiais essênciais para organizar, revisar e praticar.</p>
             </div>
 
             <ul class="offer-list check-list">
@@ -363,7 +403,7 @@
       <div class="modal-timer">Esta condição termina em <time class="countdown" data-countdown>09:00</time></div>
       <div class="modal-actions compact-actions">
         <button class="btn btn-primary" type="button" data-checkout="flash">Levar tudo por R$24,90</button>
-        <button class="btn-link" type="button" data-checkout="basic">Ficar só com o Basic</button>
+        <button class="btn-link" type="button" data-checkout="basic"><u>Ficar só com o Kit Basic</u></button>
       </div>
       <small>Pagamento único • Acesso imediato • 7 dias de garantia</small>
     </div>
@@ -375,7 +415,7 @@
       <button class="modal-close" type="button" data-close="exit" aria-label="Fechar">×</button>
       <span class="modal-kicker">Antes de ir...</span>
       <h2 id="exitModalTitle">Leve todo o material por R$24,90</h2>
-      <p>Uma última condição para você começar hoje com as 4 apostilas + 5 materiais extras.</p>
+      <p>Uma última condição para você começar hoje com as 4 apostilas + 5 materiais essênciais de apoio.</p>
       <div class="modal-price"><del>R$32,90</del><strong>R$24,90</strong></div>
       <div class="modal-timer">Últimos <time class="countdown" data-countdown>09:00</time></div>
       <button class="btn btn-primary btn-block" type="button" data-checkout="flash">Aproveitar agora</button>

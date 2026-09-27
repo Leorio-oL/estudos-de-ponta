@@ -16,3 +16,10 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Serve the downloadable site archive as an attachment.
+[[headers]]
+  for = "/estudosdeponta-site.zip"
+  [headers.values]
+    Content-Disposition = "attachment; filename=estudosdeponta-site.zip"
+    Content-Type = "application/zip"

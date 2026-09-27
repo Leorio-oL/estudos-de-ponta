@@ -36,3 +36,10 @@ Extraia o ZIP e envie a pasta. O `index.html` já está na raiz.
 
 ## Observação sobre a contagem
 A contagem é iniciada quando a oferta especial é exibida e expira de fato naquela sessão. Recarregar a página durante a mesma sessão não reinicia o prazo.
+
+## Atualização do funil de diagnóstico
+- Tipografia unificada: Sora nos títulos e Open Sans nos textos.
+- Quiz reposicionado como diagnóstico de estudos.
+- Pergunta de intenção de investimento adicionada.
+- Resultado do diagnóstico agora exibe Kit Basic e Kit Pro com compra direta.
+- Kit Pro marcado como RECOMENDADO também na landing page.
