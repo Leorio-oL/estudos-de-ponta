@@ -133,7 +133,7 @@
   const promoBar = document.getElementById('promoBar');
   const basicModal = document.getElementById('basicModal');
   const exitModal = document.getElementById('exitModal');
-  const basicButton = document.getElementById('basicOfferButton');
+
   const countdownEls = [...document.querySelectorAll('[data-countdown]')];
   const FLASH_KEY = 'inssFlashEndsAt';
   let countdownTimer = null;
@@ -142,37 +142,48 @@
   function getFlashEnd() {
     try { return Number(sessionStorage.getItem(FLASH_KEY)) || 0; } catch (_) { return 0; }
   }
+
   function setFlashEnd(ts) {
     try { sessionStorage.setItem(FLASH_KEY, String(ts)); } catch (_) {}
   }
+
   function ensureFlashStarted() {
     let endsAt = getFlashEnd();
     const now = Date.now();
+
     if (!endsAt || endsAt <= now) {
       endsAt = now + CONFIG.flashMinutes * 60 * 1000;
       setFlashEnd(endsAt);
     }
+
     promoBar.hidden = false;
     startCountdown();
+
     return endsAt;
   }
+
   function startCountdown() {
     if (countdownTimer) clearInterval(countdownTimer);
+
     const tick = () => {
       const endsAt = getFlashEnd();
       const remaining = Math.max(0, endsAt - Date.now());
       const totalSec = Math.ceil(remaining / 1000);
       const min = Math.floor(totalSec / 60).toString().padStart(2, '0');
       const sec = (totalSec % 60).toString().padStart(2, '0');
+
       countdownEls.forEach(el => el.textContent = `${min}:${sec}`);
+
       if (remaining <= 0) {
         clearInterval(countdownTimer);
         countdownTimer = null;
         promoBar.hidden = true;
+
         if (!basicModal.hidden) closeModal(basicModal);
         if (!exitModal.hidden) closeModal(exitModal);
       }
     };
+
     tick();
     countdownTimer = setInterval(tick, 1000);
   }
@@ -181,18 +192,29 @@
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
   }
+
   function closeModal(modal) {
     modal.hidden = true;
     document.body.style.overflow = '';
   }
 
-  basicButton.addEventListener('click', () => {
+  document.addEventListener('click', (event) => {
+    const basicButton = event.target.closest('#basicOfferButton, #basicOfferButtonUm');
+
+    if (!basicButton) return;
+
+    event.preventDefault();
     ensureFlashStarted();
     openModal(basicModal);
   });
 
-  document.querySelectorAll('[data-close="basic"]').forEach(el => el.addEventListener('click', () => closeModal(basicModal)));
-  document.querySelectorAll('[data-close="exit"]').forEach(el => el.addEventListener('click', () => closeModal(exitModal)));
+  document.querySelectorAll('[data-close="basic"]').forEach(el =>
+    el.addEventListener('click', () => closeModal(basicModal))
+  );
+
+  document.querySelectorAll('[data-close="exit"]').forEach(el =>
+    el.addEventListener('click', () => closeModal(exitModal))
+  );
 
   if (getFlashEnd() > Date.now()) {
     promoBar.hidden = false;
@@ -201,6 +223,7 @@
 
   document.addEventListener('mouseout', (event) => {
     if (!quizCompleted || site.hidden || exitShown || (!event.relatedTarget && event.clientY > 0)) return;
+
     if (event.clientY <= 0 && window.innerWidth > 760) {
       exitShown = true;
       ensureFlashStarted();
@@ -209,7 +232,13 @@
   });
 
   setTimeout(() => {
-    if (quizCompleted && !site.hidden && !exitShown && window.innerWidth <= 760 && window.scrollY > window.innerHeight * 0.6) {
+    if (
+      quizCompleted &&
+      !site.hidden &&
+      !exitShown &&
+      window.innerWidth <= 760 &&
+      window.scrollY > window.innerHeight * 0.6
+    ) {
       exitShown = true;
       ensureFlashStarted();
       openModal(exitModal);
@@ -217,8 +246,9 @@
   }, 70000);
 
   document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') return;
-    if (!basicModal.hidden) closeModal(basicModal);
-    if (!exitModal.hidden) closeModal(exitModal);
-  });
-})();
+      if (event.key !== 'Escape') return;
+
+      if (!basicModal.hidden) closeModal(basicModal);
+      if (!exitModal.hidden) closeModal(exitModal);
+    });
+  })();
