@@ -25,9 +25,9 @@
       options: ['Nunca comecei', 'Já tentei, mas parei', 'Estou estudando atualmente', 'Já fiz algumas provas']
     },
     {
-      key: 'spent',
-      title: 'Você já pagou por cursinhos ou materiais para concurso?',
-      options: ['Nunca', 'Até R$100', 'Entre R$100 e R$500', 'Mais de R$500']
+      key: 'investment',
+      title: 'Quanto você estaria disposto a investir em um material excelente para sua preparação?',
+      options: ['Até R$20', 'Entre R$20 e R$35', 'Entre R$35 e R$50', 'Entre R$50 e R$100', 'Mais de R$100, se valer a pena']
     },
     {
       key: 'barrier',
@@ -63,7 +63,7 @@
     showScreen(questionScreen);
     const pct = Math.round(((questionIndex + 1) / questions.length) * 100);
     progress.style.width = `${pct}%`;
-    questionCount.textContent = `PERGUNTA ${questionIndex + 1} DE ${questions.length}`;
+    questionCount.textContent = `ETAPA ${questionIndex + 1} DE ${questions.length}`;
     questionMini.textContent = `${pct}%`;
     questionTitle.textContent = q.title;
     questionOptions.innerHTML = '';
@@ -88,15 +88,7 @@
 
   function showQuizResult() {
     progress.style.width = '100%';
-    const barrier = answers.barrier || '';
-    const map = {
-      'Não sei o que estudar': 'Pelas suas respostas, faz sentido começar com um material que já mostre o que estudar e em qual direção seguir.',
-      'Não consigo me organizar': 'Pelas suas respostas, uma estrutura mais organizada pode ajudar você a manter constância sem se perder no caminho.',
-      'Cursinhos são caros demais': 'Pelas suas respostas, faz sentido começar com algo mais acessível, sem precisar investir alto logo no primeiro passo.',
-      'Tenho pouco tempo': 'Pelas suas respostas, o ideal é ter um material mais objetivo para aproveitar melhor cada sessão de estudo.',
-      'Não sei por onde começar': 'Pelas suas respostas, o mais importante agora é ter clareza para tirar a preparação da estaca zero.'
-    };
-    resultText.textContent = map[barrier] || 'Pelas suas respostas, uma preparação objetiva e organizada pode ajudar você a começar sem gastar uma fortuna.';
+    resultText.innerHTML = '<strong>Você precisa de uma preparação simples, organizada e que seja fácil de seguir.</strong>';
     showScreen(resultScreen);
   }
 
@@ -117,20 +109,6 @@
   });
 
   document.querySelector('[data-action="enter-site"]').addEventListener('click', () => {
-    const barrier = answers.barrier;
-    const personalizedLine = document.getElementById('personalizedLine');
-    const map = {
-      'Não sei o que estudar': 'Você disse que não sabe exatamente o que estudar. Por isso o conteúdo principal já está dividido por blocos e por tema.',
-      'Não consigo me organizar': 'Você disse que sua maior dificuldade é organização. O Kit Pro inclui materiais para ajudar a dar mais ritmo e estrutura à rotina.',
-      'Cursinhos são caros demais': 'Você disse que cursinhos caros são uma barreira. Aqui você pode começar por R$19,90, sem mensalidade.',
-      'Tenho pouco tempo': 'Você disse que tem pouco tempo. A ideia é te ajudar com um material mais direto para aproveitar melhor as horas disponíveis.',
-      'Não sei por onde começar': 'Você disse que ainda não sabe por onde começar. A proposta aqui é tornar o primeiro passo mais simples.'
-    };
-    if (map[barrier]) {
-      personalizedLine.textContent = map[barrier];
-      personalizedLine.hidden = false;
-    }
-
     quizCompleted = true;
     gate.hidden = true;
     site.hidden = false;
