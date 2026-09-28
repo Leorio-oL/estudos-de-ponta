@@ -1820,9 +1820,9 @@ h3,
 
 .diagnosis-result-text {
   max-width: 720px !important;
-  margin: 0 0 14px !important;
+  margin: 0 0 20px !important;
   color: #eaf2f6 !important;
-  font-size: 15px !important;
+  font-size: 18px !important;
   line-height: 1.45 !important;
 }
 
@@ -1835,14 +1835,14 @@ h3,
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin: 8px 0 18px;
+  margin: 8px 0 25px 0;
 }
 
 .diagnosis-summary .diagnosis-step {
   flex: 1 1 0;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   min-width: 0;
   padding: 0;
   border: 0;
@@ -1862,14 +1862,14 @@ h3,
   background: transparent;
   color: var(--green);
   font-family: "Sora", Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .diagnosis-summary .diagnosis-step p {
   margin: 0;
   color: #c6d4dd;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.35;
 }
 
@@ -1882,21 +1882,22 @@ h3,
 
 @media (max-width: 720px) {
   .quiz-result-screen .result-check {
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
     margin-bottom: 8px;
   }
 
   .diagnosis-result-text {
-    margin-bottom: 12px !important;
-    font-size: 14px !important;
+    margin-bottom: 20px !important;
+    font-size: 18px !important;
   }
 
   .diagnosis-summary {
     flex-direction: column;
     align-items: stretch;
+    font-size: 15px;
     gap: 4px;
-    margin: 8px 0 15px;
+    margin: 8px 0 20px;
   }
 
   .diagnosis-summary .diagnosis-step {
