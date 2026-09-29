@@ -88,8 +88,9 @@
 
   function showQuizResult() {
     progress.style.width = '100%';
-    resultText.innerHTML = '<strong>Você precisa de uma preparação simples, organizada e que seja fácil de seguir.</strong>';
+    resultText.innerHTML = '<strong>Seu diagnóstico mostra que você precisa de menos complicação e mais direção na hora de estudar.</strong>';
     showScreen(resultScreen);
+    requestAnimationFrame(() => { gate.scrollTop = 0; });
   }
 
   document.querySelector('[data-action="start-quiz"]').addEventListener('click', () => {
