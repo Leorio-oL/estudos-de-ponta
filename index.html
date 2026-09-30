@@ -85,44 +85,35 @@
           <span id="questionMini">20%</span>
         </div>
         <h2 id="questionTitle"></h2>
+        <p class="question-helper">Escolha uma alternativa</p>
         <div id="questionOptions" class="question-options"></div>
         <button id="quizBack" class="text-button" type="button">← Voltar</button>
       </div>
 
-      <div id="quizResult" class="quiz-screen quiz-result-screen">
+      <div id="quizLoading" class="quiz-screen quiz-loading-screen" aria-live="polite">
+        <span class="eyebrow">Analisando suas respostas</span>
+        <h2>Preparando seu resultado...</h2>
+        <p>Com base nas suas respostas, estamos definindo a melhor direção para a sua preparação.</p>
+        <div class="diagnosis-loader" aria-label="Carregando seu diagnóstico">
+          <div class="diagnosis-loader-row">
+            <span>Carregando seu diagnóstico...</span>
+            <strong id="diagnosisLoadingPercent">0%</strong>
+          </div>
+          <div class="diagnosis-loader-track"><span id="diagnosisLoadingBar"></span></div>
+        </div>
+        <img class="diagnosis-loading-mockup" src="assets/mockup.webp" alt="Material de preparação INSS Estudos de Ponta" width="1080" height="1080" />
+      </div>
+
+      <div id="quizResult" class="quiz-screen quiz-result-screen quiz-result-simple">
         <div class="result-check">✓</div>
-        <span class="eyebrow eyebrow-green">Seu diagnóstico</span>
-        <p id="quizResultText" class="diagnosis-result-text"><strong>Seu diagnóstico mostra que você precisa de menos complicação e mais direção na hora de estudar.</strong></p>
-        <p class="diagnosis-result-support">Por isso, separamos duas opções de preparação para você começar agora.</p>
-
-        <div class="diagnosis-summary" aria-label="Resumo do diagnóstico">
-          <div class="diagnosis-step"><span>01</span><p>Evite conteúdos espalhados.</p></div>
-          <span class="diagnosis-arrow" aria-hidden="true">→</span>
-          <div class="diagnosis-step"><span>02</span><p>Tenha uma estrutura clara.</p></div>
-          <span class="diagnosis-arrow" aria-hidden="true">→</span>
-          <div class="diagnosis-step"><span>03</span><p>Comece sem esperar a rotina perfeita.</p></div>
+        <span class="eyebrow eyebrow-green">Seu diagnóstico está pronto</span>
+        <h2 class="diagnosis-final-title">Seu maior risco agora é continuar deixando para depois.</h2>
+        <div id="quizResultText" class="diagnosis-final-copy">
+          <p>Você não precisa esperar o edital, ter mais tempo ou gastar uma fortuna para começar.</p>
+          <p>Precisa apenas de <strong>direção, organização e o material certo</strong> para dar o primeiro passo.</p>
+          <p class="diagnosis-final-question"><strong>A oportunidade pode chegar. A pergunta é: você vai estar preparado?</strong></p>
         </div>
-
-        <div class="diagnosis-offer-grid">
-          <article class="diagnosis-card">
-            <span class="diagnosis-kit-label">Kit Basic</span>
-            <h3>4 Apostilas Completas | INSS</h3>
-            <p>Para começar com o conteúdo essencial.</p>
-            <div class="diagnosis-price"><small>R$</small><strong>19</strong><span>,90</span></div>
-            <button id="basicOfferButton" class="btn btn-primary btn-block" type="button">Comprar Kit Basic <span>→</span></button>
-          </article>
-
-          <article class="diagnosis-card diagnosis-card-pro">
-            <span class="diagnosis-recommended">RECOMENDADO</span>
-            <span class="diagnosis-kit-label">Kit Pro</span>
-            <h3>4 Apostilas + 5 materiais essênciais de apoio</h3>
-            <p>Para estudar, organizar, revisar e praticar.</p>
-            <div class="diagnosis-price"><small>R$</small><strong>32</strong><span>,90</span></div>
-            <button class="btn btn-primary btn-block" type="button" data-checkout="pro">Comprar Kit Pro <span>→</span></button>
-          </article>
-        </div>
-
-        <button class="btn diagnosis-more" data-action="enter-site">Saber mais sobre o material <span>→</span></button>
+        <button class="btn btn-primary btn-xl diagnosis-final-cta" data-action="enter-site">QUERO VER COMO COMEÇAR <span>→</span></button>
       </div>
     </section>
   </main>

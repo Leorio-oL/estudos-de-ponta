@@ -45,16 +45,19 @@
   const progress = document.getElementById('quizProgress');
   const startScreen = document.getElementById('quizStart');
   const questionScreen = document.getElementById('quizQuestion');
+  const loadingScreen = document.getElementById('quizLoading');
   const resultScreen = document.getElementById('quizResult');
   const questionTitle = document.getElementById('questionTitle');
   const questionOptions = document.getElementById('questionOptions');
   const questionCount = document.getElementById('questionCount');
   const questionMini = document.getElementById('questionMini');
   const resultText = document.getElementById('quizResultText');
+  const diagnosisLoadingBar = document.getElementById('diagnosisLoadingBar');
+  const diagnosisLoadingPercent = document.getElementById('diagnosisLoadingPercent');
   const backBtn = document.getElementById('quizBack');
 
   function showScreen(screen) {
-    [startScreen, questionScreen, resultScreen].forEach(s => s.classList.remove('active'));
+    [startScreen, questionScreen, loadingScreen, resultScreen].forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
   }
 
@@ -79,16 +82,44 @@
           questionIndex += 1;
           renderQuestion();
         } else {
-          showQuizResult();
+          showDiagnosisLoading();
         }
       });
       questionOptions.appendChild(btn);
     });
   }
 
+  function showDiagnosisLoading() {
+    progress.style.width = '100%';
+    showScreen(loadingScreen);
+    requestAnimationFrame(() => { gate.scrollTop = 0; });
+
+    const duration = 2800;
+    const startedAt = performance.now();
+    diagnosisLoadingBar.style.width = '0%';
+    diagnosisLoadingPercent.textContent = '0%';
+
+    const animate = (now) => {
+      const elapsed = now - startedAt;
+      const raw = Math.min(1, elapsed / duration);
+      // Curva suave para dar sensação de análise real sem travar no fim.
+      const eased = 1 - Math.pow(1 - raw, 2.2);
+      const pct = Math.min(100, Math.round(eased * 100));
+      diagnosisLoadingBar.style.width = `${pct}%`;
+      diagnosisLoadingPercent.textContent = `${pct}%`;
+
+      if (raw < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setTimeout(showQuizResult, 220);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }
+
   function showQuizResult() {
     progress.style.width = '100%';
-    resultText.innerHTML = '<strong>Seu diagnóstico mostra que você precisa de menos complicação e mais direção na hora de estudar.</strong>';
     showScreen(resultScreen);
     requestAnimationFrame(() => { gate.scrollTop = 0; });
   }
